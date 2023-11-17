@@ -1,0 +1,102 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #7289da, #6e5baa, #8461c1, #9f7ae5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.bot-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Change layout */
+  max-width: 900px; /* Set a max-width for the container */
+  width: 100%;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  animation: containerEntrance 1s ease forwards;
+}
+.bot-header,
+.bot-info {
+  flex: 1;
+  /* Separate text and images area */
+}
+.bot-logo {
+  width: 200px; /* Increased logo size */
+  height: auto;
+  margin-bottom: 1rem;
+}
+.functionality-image {
+  width: 200px; /* Increased functionality image size */
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.invite-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-image: linear-gradient(to right, #8461c1, #9f7ae5);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.invite-btn::before {
+  content: '';
+  background: linear-gradient(to right, #ffffff22, #ffffff22);
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.invite-btn:hover::before {
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+}
+
+.invite-btn:hover {
+  background-image: linear-gradient(to left, #6e5baa, #7289da);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.invite-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
